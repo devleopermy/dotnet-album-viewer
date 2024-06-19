@@ -28,7 +28,7 @@ pipeline {
             }
         stage('Deploy') {
             steps {
-            bat 'C:/Jenkinstest.bat'
+            bat 'C:/Jenkins/test.bat'
                 }
             }
             

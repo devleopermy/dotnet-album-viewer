@@ -8,7 +8,8 @@ pipeline {
         stage("Parallel") {
         steps {
           parallel (
-          "Taskone" : { echo 'Thsi is task One'}, "Tasktwo" : { echo 'This is task two'})
+          "Taskone" : { echo 'This is task One'},
+          "Tasktwo" : { echo 'This is task two'})
           } 
         }
         stage('Build') {

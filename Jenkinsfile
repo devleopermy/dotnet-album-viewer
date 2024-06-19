@@ -1,7 +1,7 @@
 pipeline {  
     agent any
     triggers {
-    cron('H/3 * * * *')
+    cron('H/2 * * * *')
     }
     stages {
         stage('Build') {
@@ -21,10 +21,13 @@ pipeline {
             }
         stage('Deploy') {
             steps {
-            bat 'C:/Jenkins/test.bat'
-            cmd echo '%BUILD_NUMBER%'
+            bat 'C:/Jenkinstest.bat'
                 }
             }
 
-        }
+       post {
+       failure {mail to: 'neutralor@gmail.com',
+       subject: "Pipeline has failed: ${currentBuild.fullDisplayName}",
+       body: "Error in ${env.BUILD_URL}"
+  }
 }

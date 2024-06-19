@@ -9,7 +9,8 @@ pipeline {
         steps {
           parallel (
           "Taskone" : { echo 'Thsi is task One'}, "Tasktwo" : { echo 'This is task two'})
-
+          } 
+        }
         stage('Build') {
             steps {
             bat 'C:/Jenkins/test.bat'
@@ -30,5 +31,6 @@ pipeline {
             bat 'C:/Jenkinstest.bat'
                 }
             }
-       }      
+            
+}
 }

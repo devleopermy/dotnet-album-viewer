@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
             bat 'C:/Jenkins/test.bat'
-            echo '%BUILD_NUMBER%'
+            cmd echo '%BUILD_NUMBER%'
                 }
             }
 
